@@ -1,17 +1,15 @@
-def my_collect(array) 
-  my_collect(array) do |name|
-  name.split(" ").first 
-end
-  i = 0
-  while i < array.length
-  collection << 
-  yield(array[i])
-    i + 1 
-  end
-  collection
-end
+list = ["Tim Jones", "Bob Costas", "Don Knotts"]
 
-array = ["Tim Jones", "Tom Smith", "Jim Campagno"]
+def my_collect(array)
+  i = 0
+  name_collection = []
+  while i < array.length
+    name_collection.push yield(array[i])
+    i += 1
+  end
+  name_collection
+end
+my_collect(list) {|i| i.split(" ").first}
 
 
 
